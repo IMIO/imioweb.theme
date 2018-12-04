@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<registry>
+  <records prefix="plone.resources/imioweb-custom"
+            interface='Products.CMFPlone.interfaces.IResourceRegistry'>
+      <value key="css">
+        <element>++plone++imioweb-theme/imioweb_custom.less</element>
+      </value>
+  </records>
+  <records prefix="plone.bundles/imioweb-custom"
+            interface='Products.CMFPlone.interfaces.IBundleRegistry'>
+  <value key="resources">
+    <element>imioweb-custom</element>
+  </value>
+  <value key="enabled">True</value>
+  <value key="compile">True</value>
+  <value key="csscompilation">++plone++imioweb-theme/imioweb_custom_compiled.css</value>
+  <value key="last_compilation">2018-07-13 00:00:00</value>
+</records>
+</registry>
