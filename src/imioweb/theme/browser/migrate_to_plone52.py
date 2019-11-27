@@ -23,11 +23,15 @@ class MigrationView(BrowserView):
         self.destination_url = config.destination['url']
         self.destination_login = config.destination['login']
         self.destination_password = config.destination['password']
+        self.objects_to_finalize = {
+            'collections': []
+        }
         objects_tree = self.recursive_explore(self.source_url)
         if config.destination.pop('clean', False):
             self.clean_site(site)
             transaction.commit()
         self.recursive_create(self.destination_url, objects_tree=objects_tree['items'])
+        self.finalize_collections(self.objects_to_finalize['collections'])
         catalog.clearFindAndRebuild()
 
     def recursive_explore(self, url):
@@ -64,16 +68,16 @@ class MigrationView(BrowserView):
         portal_types = api.portal.get_tool('portal_types')
         workflow_tool = api.portal.get_tool('portal_workflow')
         headers = {'Accept': 'application/json'}
-        source_auth = (self.source_login, self.source_password)
         destination_auth = (self.destination_login, self.destination_password)
         for obj_args in objects_tree:
             # ignore unknown content types
             if obj_args['@type'] not in portal_types.objectIds():
                 continue
             sub_obj_tree = obj_args.pop('items', [])
-            if obj_args['@type'] in ['Image']:
-                payload = requests.get(obj_args['image']['download'], headers=headers, auth=source_auth)
-                # obj_args['image']['data'] = payload.content
+#            if obj_args['@type'] in ['Image']:
+#                source_auth = (self.source_login, self.source_password)
+#                payload = requests.get(obj_args['image']['download'], headers=headers, auth=source_auth)
+#                obj_args['image']['data'] = payload.content
             response = requests.post(url, headers=headers, auth=destination_auth, json=obj_args)
             created = response.json()
             print('created {}'.format(created['@id']))
@@ -89,9 +93,20 @@ class MigrationView(BrowserView):
                 workflow_state['review_state'] = obj_args['review_state']
                 workflow_tool.setStatusOf(workflow_id, created_object, workflow_state.copy())
 
-            # recursive call
+            if obj_args['@type'] in ['Collection']:
+                self.objects_to_finalize['collections'].append(created_object)
+
             if obj_args['@type'] not in ['Collection']:
+                # recursive call
                 self.recursive_create(created['@id'], objects_tree=sub_obj_tree)
+
+    def finalize_collections(self, collections):
+        # for collections set the parent folder view as the collection result
+        for collection in collections:
+            parent = collection.aq_parent
+            if parent.portal_type == 'Folder' and api.content.get_state(collection) == 'published':
+                parent.setDefaultPage(collection.id)
+                print('finalized collection folder {}'.format(parent.id))
 
 
 class Config(object):
