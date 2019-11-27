@@ -18,4 +18,11 @@
       directory="static"
       />
 
+  <browser:page
+      name="migrate_to_52"
+      for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+      class=".migrate_to_plone52.MigrationView"
+      permission="zope2.View"
+  />
+
 </configure>
