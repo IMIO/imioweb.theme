@@ -46,15 +46,3 @@ Ajouter le contenu d'exemple
 
 Le theme Classic est installé!
 ==============================
-
-
-Credits
--------
-
-This package was developed by `Affinitic team <https://github.com/affinitic>`_.
-
-.. image:: ./src/imioweb/theme/theme/images/affinitic.jpg
-   :alt: Affinitic website
-   :target: http://www.affinitic.be
-
-The project is licensed under the GPLv2.
