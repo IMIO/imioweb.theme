@@ -5,7 +5,8 @@ Changelog
 1.0b2 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Fix barceloneta LESS files path
+  [laulaz]
 
 
 1.0b1 (2019-12-11)
