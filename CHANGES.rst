@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.0b2 (unreleased)
+1.0b2 (2020-01-08)
 ------------------
 
 - Fix barceloneta LESS files path
