@@ -5,7 +5,8 @@ Changelog
 1.0b3 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Add base imioweb.less file (custom.less is used for TTW modifications)
+  [laulaz]
 
 
 1.0b2 (2020-01-08)
