@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.0b3 (unreleased)
+1.0b3 (2020-01-10)
 ------------------
 
 - Add base imioweb.less file (custom.less is used for TTW modifications)
