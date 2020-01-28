@@ -5,6 +5,8 @@
 =============
 imioweb.theme
 =============
+Actuel theme for the new IMIO website.
+
 Preview
 -------
 
