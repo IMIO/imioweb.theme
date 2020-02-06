@@ -2,10 +2,14 @@ Changelog
 =========
 
 
-1.0b4 (unreleased)
+1.0b4 (2020-02-06)
 ------------------
 
-- Nothing changed yet.
+- Add images in assets folder
+  [tlamb]
+
+- Add styles for imioweb (theme.less)
+  [tlamb]
 
 
 1.0b3 (2020-01-10)
