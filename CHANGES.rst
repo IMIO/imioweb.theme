@@ -2,10 +2,17 @@ Changelog
 =========
 
 
-1.0b5 (unreleased)
+1.0b5 (2020-02-07)
 ------------------
 
-- Nothing changed yet.
+- Add styles for imioweb (theme.less)
+  [tlamb]
+
+- Add grunt to compile less.
+  [tlamb]
+
+- Custom less slider
+  [tlamb]
 
 
 1.0b4 (2020-02-06)
