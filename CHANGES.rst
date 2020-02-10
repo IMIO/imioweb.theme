@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.0b6 (unreleased)
+1.0b6 (2020-02-10)
 ------------------
 
 - Add styles for imioweb (theme.less)
