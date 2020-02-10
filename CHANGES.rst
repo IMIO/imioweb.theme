@@ -5,8 +5,14 @@ Changelog
 1.0b6 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Add styles for imioweb (theme.less)
+  [tlamb]
 
+- Release for view layout in preprod
+  [tlamb]
+
+- Fix 404 for 'Roboto' font. Adding Roboto folder with .woff inside imioweb.theme less to fix
+  [tlamb]
 
 1.0b5 (2020-02-07)
 ------------------
