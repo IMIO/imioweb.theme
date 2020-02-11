@@ -1,0 +1,114 @@
+// MAP
+.template-facetednavigation_view.subsection-qui-utilise-nos-applications{
+    #faceted-results-items {
+        height: 90vh;
+        min-height: 700px;
+        overflow-y: scroll;
+    }
+    #faceted-form fieldset {
+        border-width: 0px;
+        margin: 0;
+        padding-left: 0;
+        padding-top: 0;
+    }
+    #viewlet-below-content-body {
+        .button-map-content {
+            display: none;
+        }
+    }
+    .leaflet-popup-content ul {
+        padding-left: 1em;
+    }
+    #top-area {
+        z-index: 1;
+        position: relative;
+        background: #fff;
+        &::before {
+            content: "";
+            width: 100vw;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50vw);
+            background: #111;
+            top: 0;
+            bottom: 0;
+            z-index: -1;
+        }
+        legend{
+            color:#fff;
+            border-bottom-width:0;
+        }
+    }
+    #faceted-map-container {
+        height: 90vh !important;
+        min-height: 700px;
+        .awesome-marker-icon-green {
+            background-position: -144px 0;
+        }
+        .marker-cluster-medium,
+        .marker-cluster-small {
+            background-color: rgba(247,42,151,0.4);
+            div{
+                background-color: rgba(247,42,151,0.74);
+                span {
+                    color: white;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+    .eea-preview-items{
+        height: 90vh;
+        min-height: 700px;
+        padding-top: 20px;
+        position: relative;
+       &:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            background: red;
+            z-index: 1;
+            box-shadow: 0 0px 4.2px rgba(0, 0, 0, 0.017),
+                0 0px 9.2px rgba(0, 0, 0, 0.027),
+                0 0px 15.8px rgba(0, 0, 0, 0.035),
+                0 0px 25.7px rgba(0, 0, 0, 0.044),
+                0 0px 43.4px rgba(0, 0, 0, 0.056),
+                0 0px 92px rgba(0, 0, 0, 0.08);
+            overflow-y: hidden;
+            width: 5px;
+            overflow: hidden;
+       }
+    }
+}
+
+// Map
+.subsection-qui-utilise-nos-applications{
+    .outer-wrapper  > .container{
+        width: 100%!important;
+        #center-and-left-area-core{
+            box-shadow:
+            0 0px 4.2px rgba(0, 0, 0, 0.017),
+            0 0px 9.2px rgba(0, 0, 0, 0.027),
+            0 0px 15.8px rgba(0, 0, 0, 0.035),
+            0 0px 25.7px rgba(0, 0, 0, 0.044),
+            0 0px 43.4px rgba(0, 0, 0, 0.056),
+            0 0px 92px rgba(0, 0, 0, 0.08)
+            ;
+        }
+        #faceted-results-items{
+            padding-left: 20px;
+            .faceted-map-text a{
+                color:@font-color-black;
+                h4{
+                    font-size: 20px;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}
+
+// \Map

@@ -5,8 +5,11 @@ Changelog
 1.0b7 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Add styles for imioweb (theme.less)
+  [tlamb]
 
+- Add rules to custom favicon.
+  [tlamb]
 
 1.0b6 (2020-02-10)
 ------------------
