@@ -5,8 +5,11 @@ Changelog
 1.0b8 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Split less in diffents files for more structur
+  [thomlamb]
 
+- Style for imioweb
+  [thomlamb]
 
 1.0b7 (2020-02-11)
 ------------------
