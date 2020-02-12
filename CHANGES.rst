@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.0b8 (unreleased)
+1.0b8 (2020-02-12)
 ------------------
 
 - Split less in diffents files for more structur
