@@ -117,6 +117,9 @@ a:hover, a:focus {
 
 // Menu
 #mainnavigation{
+    button{
+        border: none!important;
+    }
     .plone-nav li label::after{
         display: none;
         @media screen and (max-width: 768px){
@@ -125,6 +128,7 @@ a:hover, a:focus {
             color: @main-color;
             background: transparent;
             font-family: fontawesome;
+            border: solid 1px #e6007e;
         }
     }
     .plone-navbar-nav {
@@ -199,6 +203,7 @@ a:hover, a:focus {
         transform: scaleX(0);
         transform-origin: right;
         transition: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+        width: 103%;
     }
     &:hover {
     color: @main-color!important;
@@ -226,9 +231,10 @@ body#visual-portal-wrapper{
             margin-right: 2rem;
             display: inline-block;
             font-size: 18px;
+            border: solid 1px#e6007e;
             &.call {
                 border-radius: 1em;
-                padding:1em 2em;
+                padding:.7em 1em;
             }
         }
     }
@@ -307,6 +313,15 @@ div#portal-banner {
             display: flex;
             flex-direction: column;
             justify-content: center;
+        }
+    }
+    .section-fonctionnalites{
+        .mosaic-tile-content{
+            padding-right: 6em;
+            .title{
+                text-align: center;
+                margin-bottom: 3rem;
+            }
         }
     }
 }
@@ -781,41 +796,6 @@ body {
 
 
 
-
-
-// AJOUT 2
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 body h1 a:hover, body h2 a:hover, body h3 a:hover, body h1 a:focus, body h2 a:focus, body h3 a:focus {
     border-bottom: 2px #e6007e solid;
 }
@@ -867,9 +847,22 @@ body h1 a:hover, body h2 a:hover, body h3 a:hover, body h1 a:focus, body h2 a:fo
         text-align: center;
         display: inline-block;
         padding: 1em;
-        border-right: 1px solid #f1f1f1;
-        border-bottom: 1px solid #f1f1f1;
         width: 10em;
+        &:nth-child(10){
+            border-right: 0px;
+        }
+
+        &:nth-child(-n+5){
+            border-right: 1px solid #f1f1f1;
+            border-bottom: 1px solid #f1f1f1;
+        }
+        &:nth-child(5){
+            border-right: 0px solid #f1f1f1;
+        }
+        &:nth-child(n+6){
+            border-right: 1px solid #f1f1f1;
+
+        }
         a {
 
         }
@@ -889,19 +882,10 @@ body h1 a:hover, body h2 a:hover, body h3 a:hover, body h1 a:focus, body h2 a:fo
 }
 
 
-
-
-
-
 .mosaic-rich-text.mce-edit-focus {
     color: 
     black;
 }
-
-
-
-
-
 
 main{
     footer{
@@ -926,5 +910,79 @@ body {
         }
     }
 }
+.section-support{
+    #portal-breadcrumbs{
+        display: none;
+    }
+    .task-support,
+    .tools-support,
+    .book-support{
+        font-family: fontawesome;
+        font-size: 35px;
+        color: @main-color;
+        padding-top: 2rem;
+        margin-bottom: 0;
+    }
+}
+// PAGE ACTUS
+.section-actus.site-imio{
+    article{
+        margin-top: 3em;
+    }
+    h2{
+        font-size: 17px;
+        margin-bottom: 1rem;
+        a{
+            color: #000!important;
+            &:hover{
+                border-bottom: none;
+                color: @main-color;
+            }
+        }
+    }
 
+    .tileImage {
+        float: none!important;
+        order: -1;
+    }
+    .tileFooter{
+        margin-top: 10px;
+    }
+    .tileItem{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .tileBody{
+        border-top: solid 1px rgb(218, 218, 218);
+        padding-top: 11px;
+    }
+}
 
+.mosaic-grid-row.section-blocs .existing-content-tile > div {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+}
+@media screen and (min-width: 1024px){
+    .mosaic-grid-row.section-blocs .existing-content-tile > div {
+        article {
+            flex-basis: 21%;
+            margin-right: 5%;
+            margin-top: 1em;
+            &:nth-child(4n){
+                margin-right:0 ;
+            }
+            &.tileItem:nth-child(3n+2):nth-last-child(-n+3):last-child {  
+                left: -34.5% !important;    
+                position: relative;
+            }
+        }
+    }
+}
+@media screen and (min-width: 640px) and (max-width: 1023px){
+    .mosaic-grid-row.section-blocs .existing-content-tile > div {
+        article {
+            flex-basis: 47%;
+        }
+    }
+}

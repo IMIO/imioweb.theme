@@ -27,6 +27,7 @@
             }
         }
         .slick-dots{
+            justify-content: center;
             @media screen and (min-width:1300px){
                 display: flex!important;
                 flex-direction: column!important;
@@ -368,6 +369,13 @@
                 .title{
                     &:after{
                         content: "Gestion des activités extrascolaires";
+                    }
+                }   
+            }
+            a[href*="ia-consult"]{
+                .title{
+                    &:after{
+                        content: "Consultance et audit informatique";
                     }
                 }   
             }

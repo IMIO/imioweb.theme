@@ -23,6 +23,17 @@ h1{
     }
 }
 
+
+.plone-breadcrumb ol > li + li::before {
+	content: "\f054";
+	position: absolute;
+	border:none!important;
+	color: #cccccc;
+	left: -19px;
+	top: 0;
+	padding: 0 !important;
+	font-family: fontawesome;
+}
 // MEDIA GENER
 
 @media screen and (max-width: 600px){
@@ -49,12 +60,16 @@ body .section-support.mosaic-grid-row .mosaic-grid-cell > div {
 .mosaic-grid-row.section-blocs .existing-content-tile > div {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    align-items: baseline;
 }
 @media screen and (min-width: 1024px){
     .mosaic-grid-row.section-blocs .existing-content-tile > div {
         article {
-            flex-basis: 31%;
+            flex-basis: 21%;
+            margin-right: 5%;
+            &:nth-child(4n){
+                margin-right:0 ;
+            }
             &.tileItem:nth-child(3n+2):nth-last-child(-n+3):last-child {  
                 left: -34.5% !important;    
                 position: relative;
@@ -134,4 +149,56 @@ body#visual-portal-wrapper a.bouton.blanc {
     color:#e6007e;
     box-shadow: 0 3.8px 4px rgba(0, 0, 0, 0.02), 0 10.7px 9.5px rgba(0, 0, 0, 0.028), 0 21px 17.9px rgba(0, 0, 0, 0.035), 0 35.4px 31.9px rgba(0, 0, 0, 0.042), 0 56.3px 59.7px rgba(0, 0, 0, 0.05), 0 108px 143px
     rgba(0, 0, 0, 0.07);
+    border: solid 1px#fff;
+}
+
+
+.slick-dots{
+    li{
+        button{
+            background:transparent;
+            border-radius: 50%;
+            width: 10px;
+            height: 10px;
+            padding: 0;
+            border: solid 1px @main-color;
+            &:after, &:before{
+                display: none;
+            }   
+        }
+        &.slick-active{
+            button{
+                background:@main-color;
+            }
+        }
+    }
+}
+
+
+
+// LAST RSYNC
+
+@media screen and (min-width: 1024px){
+    .section-nos-applications .mosaic-grid-row.bgmain .mosaic-grid-cell:last-child .mosaic-tile-content,
+    .section-nos-services .mosaic-grid-row.bgmain .mosaic-grid-cell:last-child .mosaic-tile-content {
+        text-align: right;
+    }
+    .section-nos-applications .mosaic-grid-row.bgmain, .subsection-nos-services .mosaic-grid-row.bgmain {
+    max-width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    }
+}
+.section-nos-applications .mosaic-grid-row.bgmain h2, .subsection-nos-services .mosaic-grid-row.bgmain h2 {
+    color: white;
+}
+.section-bienvenue h1 {
+    height: 1px;
+    width: 1px;
+    color: 
+    white;
+    overflow: hidden;
+}
+footer .doormat.row div:last-child img {
+    max-width: 8em;
 }
